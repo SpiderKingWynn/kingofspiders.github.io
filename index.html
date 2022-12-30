@@ -79,14 +79,12 @@
 		mac : false,
 		xll : false
 		};
-		//检测平台
 		var p = navigator.platform;
 		system.win = p.indexOf("Win") == 0;
 		system.mac = p.indexOf("Mac") == 0;
 		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-		//跳转语句，如果是手机访问就自动跳转到手机端wap页面
 		if((system.win||system.mac||system.xll) == false){
-		window.location.href="http://index.html";//PC端网址
+		window.location.href="http://m.spider-king.site";
 		}
     </script>
 </head>
