@@ -38,9 +38,18 @@
 			var min = Math.floor(s / 60 % 60 );
 			//相差秒数
 			var sec = Math.floor(s % 60 );
-			var html = "距离2023年还有"+day+"天"+hours+"时"+min+"分"+sec+"秒";
+			var html = "距离2023年还有"
+			if ((hours == 0) == false){
+			    html = html+hours+"时";
+			}
+			if ((min == 0) == false){
+			    html = html+min+"分";
+			}
+			if ((sec == 0) == false){
+			    html = html+sec+"秒";
+			}
 			hh.innerHTML = html;
-			if (s == 199200) {
+			if (s == 0) {
 				window.location.href = 'newyear.html';
 			}
 		}
