@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Please Answer Question First</title>
+        <style>
+            body{
+                background-color: cornsilk;
+                user-select:none;
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                -ms-user-select:none;
+                -khtml-user-select:none;
+            }
+            h1{
+                text-align: center;
+            }
+            a{
+                text-decoration-line: none;
+            }
+            a:hover{
+                text-decoration-line: underline;
+            }
+            div{
+                background-color:white;
+                opacity: 0.8;
+            }
+            .question{
+                border-radius:20px;
+                padding-left:5%;
+                padding-right:5%;
+                overflow-y:auto;
+                height:550px;
+            }
+            .question h1{
+                text-align:center;
+            }
+            .question li{
+                font-size:20px;
+            }
+            .question button{
+                font-size:30px;
+                background-color: aqua;
+                width:120px;
+                height:50px;
+                border-radius:10px;
+                border-width: 1px;
+                margin:auto 45%;
+            }
+            .copyright{
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Please fill in the questionnaire truthfully so that I can provide customized tutorials according to your situation&emsp;&emsp;&emsp;&emsp;<a href="question.html">中文</a></h1>
+        <h3>My QQ: 2682450071</h3>
+        <h3>My Wechat ID: spiderking2010</h3>
+        <div class="question">
+            <h1>自制网页条件问卷</h1>
+            <form method="post" id="mform">
+                <ol>
+                    <li>How many dollars is your website budget per year:</li>
+                    <label><input type="radio" name="yusuan" value="0"/>0 dollor</label><br>
+                    <label><input type="radio" name="yusuan" value="1"/>1~20 dollors</label><br>
+                    <label><input type="radio" name="yusuan" value="2"/>20~200 dollors</label><br>
+                    <label><input type="radio" name="yusuan" value="3"/>More than 600 dollors</label><br>
+                    <br>
+                    <li>The programming style/language you want to use on this website:</li>
+                    <label><input type="radio" name="bcyy" value="0"/>html+css+js (This website) </label><br>
+                    <label><input type="radio" name="bcyy" value="1"/>php</label><br>
+                    <label><input type="radio" name="bcyy" value="2"/>Python Django</label><br>
+                    <label><input type="radio" name="bcyy" value="3"/>Markdown/I can't program</label><br>
+                    <label><input type="radio" name="bcyy" value="4"/>Paid custom production</label><br>
+                    <br>
+                    <li>What will you use your website for</li>
+                    <label><input type="radio" name="usein" value="1"/>Personal Website + Personal Blog</label><br>
+                    <label><input type="radio" name="usein" value="2"/>Personal Blog</label><br>
+                    <label><input type="radio" name="usein" value="3"/>Others (Said on Wechat or QQ) </label>
+                </ol>
+                <button type="submit" onclick="submitform(this)">Submit</button>
+            </form>
+        </div>
+        <p class="copyright">Copyright © 2023 Spider King. All Rights Reserved. </p>
+        <script>
+            function submitform(){
+                var flg = true;
+                let formdata = new FormData(mform);
+
+                let ys = formdata.get("yusuan");
+                let bc = formdata.get("bcyy");
+                let ue = formdata.get("usein");
+
+                if (ys == null || bc == null || ue == null){
+                    alert("Incomplete filling");
+                    return 0;
+                }
+                alert("Keep in mind your website type: #e"+ys+bc+"e"+ue);
+                if (ys == "0"){
+                    alert("You don't have a budget and can't use paid domains, only 'github.io'");
+                    window.open("sghygh.html")
+                }
+                if (bc == "4"){
+                    alert("Your budget is not enough!")
+                }
+                if (ys == "1"){
+                    alert("Your budget can only purchase domain names, server please use GitHub")
+                    window.open("sghygd.html")
+                }else if (ys == "2"){
+                    alert("Congratulations, your budget is sufficient to buy a cloud server.")
+                    alert("Sorry! It does not support the website construction service of servers other than GitHub. Please check yourself on the network!")
+                }else if (ys == "3"){
+                    alert("Congratulations!    You have enough money to buy a entity server once, no renewal fee, and just pay for the domain name.")
+                    alert("Sorry!  Do not support the physical server site construction service for now!  Please check yourself on the network!")
+                }
+            }
+
+        </script>
+    </body>
+</html>
