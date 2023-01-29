@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>请先回答问卷</title>
+        <style>
+            body{
+                background-color: cornsilk;
+                user-select:none;
+                -moz-user-select:none;
+                -webkit-user-select:none;
+                -ms-user-select:none;
+                -khtml-user-select:none;
+            }
+            #nav{
+                position:fixed;
+                top: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                z-index:999;
+            }
+            #nav ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+            }
+            #nav li {
+                padding: 0 15px;
+            }
+            #nav a {
+                text-decoration: none;
+                font-weight: bold;
+                color: #2e2e2e;
+                font-size:20px;
+            }
+            h1{
+                text-align: center;
+            }
+            a{
+                text-decoration-line: none;
+            }
+            a:hover{
+                text-decoration-line: underline;
+            }
+            div{
+                background-color:white;
+                opacity: 0.8;
+            }
+            .question{
+                border-radius:20px;
+                padding-left:5%;
+                padding-right:5%;
+                overflow-y:auto;
+                height:550px;
+            }
+            .question h1{
+                text-align:center;
+            }
+            .question li{
+                font-size:20px;
+            }
+            .question button{
+                font-size:30px;
+                background-color: aqua;
+                width:100px;
+                height:50px;
+                border-radius:10px;
+                border-width: 1px;
+                margin:auto 50%;
+            }
+            .copyright{
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">主页</a></li>
+                <li><a href="../index.html#about">关于本站</a></li>
+                <li><a href="../download.html">下载</a></li>
+                <li><a href="../blog/index.html">博客</a></li>
+                <li><a href="../index.html#friendsite">友情链接</a></li>
+                <li><a href="index.html">建站服务</a></li>
+                <li><a href="../index.html#message">留言板</a></li>
+            </ul>
+        </nav>
+        <br><br>
+        <h1>请认真如实填写问卷，以便我根据您的情况提供定制教程</h1>
+        <h3>联系请加QQ：2682450071</h3>
+        <h3>联系请加微信：spiderking2010</h3>
+        <div class="question">
+            <h1>自制网页条件问卷</h1>
+            <form method="post" id="mform">
+                <ol>
+                    <li>你的网站需要备案吗？</li>
+                    <p>Tips:&ensp;备案需要时间，且未成年人建站不建议备案&emsp;&emsp;<a href="https://baike.baidu.com/item/%E5%A4%87%E6%A1%88">关于备案</a></p>
+                    <label><input type="radio" name="beian" value="1"/>备案</label><br>
+                    <label><input type="radio" name="beian" value="0"/>不备案</label><br>
+                    <br>
+                    <li>你的网站预算大概是（每年）：</li>
+                    <label><input type="radio" name="yusuan" value="0"/>0元</label><br>
+                    <label><input type="radio" name="yusuan" value="1"/>10元~100元</label><br>
+                    <label><input type="radio" name="yusuan" value="2"/>100元~1000元</label><br>
+                    <label><input type="radio" name="yusuan" value="3"/>3000元以上</label><br>
+                    <br>
+                    <li>你要在本网站上使用的编程方式/语言：</li>
+                    <label><input type="radio" name="bcyy" value="0"/>html+css+js（本站建站方式）</label><br>
+                    <label><input type="radio" name="bcyy" value="1"/>php</label><br>
+                    <label><input type="radio" name="bcyy" value="2"/>Python Django</label><br>
+                    <label><input type="radio" name="bcyy" value="3"/>Markdown/不会编程</label><br>
+                    <label><input type="radio" name="bcyy" value="4"/>付费定制制作</label><br>
+                    <br>
+                    <li>你是否可以上<a href="https://github.com">GitHub</a>（点此测试）</li>
+                    <label><input type="radio" name="rungit" value="1"/>可以</label><br>
+                    <label><input type="radio" name="rungit" value="0"/>不可以</label><br>
+                    <br>
+                    <li>你的网站将用于</li>
+                    <label><input type="radio" name="usein" value="1"/>个人网站+博客</label><br>
+                    <label><input type="radio" name="usein" value="2"/>个人网站</label><br>
+                    <label><input type="radio" name="usein" value="3"/>其他（QQ说明）</label>
+                </ol>
+                <button type="submit" onclick="submitform(this)">提交</button>
+            </form>
+        </div>
+        <p class="copyright">Copyright © 2023 Spider King. All Rights Reserved. </p>
+        <script>
+            function submitform(){
+                var flg = true;
+                let formdata = new FormData(mform);
+
+                let ba = formdata.get("beian");
+                let ys = formdata.get("yusuan");
+                let bc = formdata.get("bcyy");
+                let rg = formdata.get("rungit");
+                let ue = formdata.get("usein");
+
+                if (ba == null || ys == null || bc == null || rg == null || ue == null){
+                    alert("填写不完整！");
+                    return 0;
+                }
+                alert("请记住你的网站类型：#"+ba+ys+bc+rg+ue);
+                if (ba == "0"){
+                    if (ys == "0"){
+                        if (rg == "0"){
+                            alert("请配置您电脑的DNS，并再次尝试");
+                            window.open("https://blog.csdn.net/rain_turns_shade/article/details/128584396")
+                            return 0;
+                        }else{
+                            alert("你没有预算，不能使用付费域名，只能使用github.io");
+                            window.open("sghygh.html")
+                        }
+                        if (bc == "4"){
+                            alert("您的预算不够！")
+                        }
+                    }else if (ys == "1"){
+                        if (rg == "0"){
+                            alert("请配置您电脑的DNS，并再次尝试");
+                            window.open("https://blog.csdn.net/rain_turns_shade/article/details/128584396")
+                            return 0;
+                        }else{
+                            alert("您的预算只能购买域名，服务器请使用GitHub")
+                            window.open("sghygd.html")
+                        }
+                    }else if (ys == "2"){
+                        alert("恭喜！您的预算充足，足够购买云服务器")
+                    }else if (ys == "3"){
+                        alert("恭喜！您的资金非常充足，可以一次性购买服务器，无需续费，只需付域名费")
+                        alert("抱歉！暂不支持实体服务器的网站建站服务！请您在网络上自己查询！")
+                    }
+                }else{
+                    alert("备案教程")
+                    window.open("https://zhuanlan.zhihu.com/p/371579941")
+                    if (ys == "0"){
+                        if (rg == "0"){
+                            alert("请配置您电脑的DNS，并再次尝试");
+                            window.open("https://blog.csdn.net/rain_turns_shade/article/details/128584396")
+                            return 0;
+                        }else{
+                            alert("你没有预算，不能使用付费域名，只能使用github.io");
+                            window.open("sghygh.html")
+                        }
+                        if (bc == "4"){
+                            alert("您的预算不够！")
+                        }
+                    }else if (ys == "1"){
+                        if (rg == "0"){
+                            alert("请配置您电脑的DNS，并再次尝试");
+                            window.open("https://blog.csdn.net/rain_turns_shade/article/details/128584396")
+                            return 0;
+                        }else{
+                            alert("您的预算只能购买域名，服务器请使用GitHub")
+                            window.open("sghygd.html")
+                        }
+                    }else if (ys == "2"){
+                        alert("恭喜！您的预算充足，足够购买云服务器")
+                    }else if (ys == "3"){
+                        alert("恭喜！您的资金非常充足，可以一次性购买服务器，无需续费，只需付域名费")
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

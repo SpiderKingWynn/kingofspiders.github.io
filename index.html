@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <title>Spider King 个人网站</title>
+    <style>
+      /* navigation bar styles */
+      #nav{
+        position:fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index:999;
+      }
+      #nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+      #nav li {
+        padding: 0 15px;
+      }
+      #nav a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #2e2e2e;
+        font-size:20px;
+      }
+      /* homepage styles */
+      #hero{
+        color:#fff;
+        text-align:center;
+        position: relative;
+        padding: 280px 0;
+        content: '';
+        background-image: url("./img/index-background.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      #hero h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #000;
+        z-index: 1;
+      }
+      #hero p {
+        font-size: 20px;
+        font-weight: bold; 
+        color: #333;
+        z-index:1;
+      }
+      #hero b{
+        color:#000;
+      }
+      /* content styles */
+      #about {
+        position: relative;
+        min-height: 250px;
+        background-color: #f1f1f1;
+        padding: 100px 0; 
+      }
+      #about h2, #about p{
+        width: 70%;
+        margin: auto;
+        text-align:center;
+        padding: 18px;
+        color: #333;
+      }
+      #friendsite {
+        position: relative;
+        min-height: 250px;
+        background-color: #f1f1f1;
+        padding: 100px 0; 
+      }
+      #friendsite h2, #friendsite p, #friendsite a{
+        width: 70%;
+        margin: auto;
+        text-align:center;
+        padding: 18px;
+        color: #333;
+        text-decoration:none;
+      }
+      #friendsite a:hover{
+        color:#d33;
+        text-decoration:underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- homepage -->
+    <section id="hero">
+      <h1>欢迎来到Spider King的个人网站！</h1>
+      <p>坐标：种花家·帝都（116.4°E，39.8°N）</p>
+      <p>建站人：初中学生</p>
+      <p>属性：个人网站</p>
+      <p>微信：spiderking2010</p>
+      <p>QQ：2682450071</p>
+      <p>注意：本站<b>除定制建站服务外</b>，<b>完全免费</b></p>
+    </section>
+    <nav id="nav">
+      <ul>
+        <li><a href="./index.html">主页</a></li>
+        <li><a href="#about">关于本站</a></li>
+        <li><a href="./download.html">下载</a></li>
+        <li><a href="./blog/index.html">博客</a></li>
+        <li><a href="#friendsite">友情链接</a></li>
+        <li><a href="./bw/index.html">建站服务</a></li>
+        <li><a href="#message">留言板</a></li>
+      </ul>
+    </nav>
+    <!-- content -->
+    <section id="about">
+      <h2>关于本站</h2>
+      <p>这里是Spider King的个人网站，您可以在这里找到我的最新作品，博客，有问题请留言。</p>
+      <p>这里也是计算机技术的交流平台，大家在这里分享自己的见解，经过筛选后把它们放入博客。</p>
+      <p>希望你们能够玩的愉快！</p>
+    </section>
+    <section id="friendsite">
+      <h2>友情链接——鸣谢</h2>
+      <p><a href="https://zifan.site">Zifan的小站</a>——建站思路提供者</p>
+      <p><a href="https://www.w3school.com.cn/html/index.asp">W3School</a>——HTML+CSS+JS建站教程</p>
+      <p><a href="https://www.godaddy.com/zh-sg">Godaddy</a>——域名提供</p>
+      <p><a href="https://github.com">GitHub</a>——充当了服务器</p>
+    </section>
+    <div id="message">
+      <script type='text/javascript' src='https://www.wjx.cn/handler/jqemed.ashx?activity=mTzoJY2&width=760&source=iframe'></script>
+    </div>
+    <p style="text-align:center;">CopyRight &copy; 2023 Spider King. All Rights Reserved.</p>
+  </body>
+</html>

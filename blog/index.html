@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /**{
+                padding:0px;margin:0px; 
+            }*/
+            body{
+                background-color:beige;
+            }
+            #nav{
+                position:fixed;
+                top: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+            #nav ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+            }
+            #nav li {
+                padding: 0 15px;
+            }
+            #nav a {
+                text-decoration: none;
+                font-weight: bold;
+                color: #2e2e2e;
+                font-size:20px;
+            }
+            .all{
+                text-align:center;
+                width:100%;
+                background:#f4f4ea;
+            }
+            .all>.title{
+                position:relative;
+                padding:30px 0px;
+            }    
+            .all>.title>h1{
+                font-size:40px;
+            }
+            .all>.title>span{
+                font-size:14px;
+                position:absolute;
+                left:50%;
+                bottom:20px;
+                transform:translateX(-50%);
+            }
+            .all>.title>p{
+                width:20%;
+                border-bottom:2px solid #14bf8b;
+                margin:20px auto;
+            }
+            .all>.block{
+                width: 1220px;
+                margin: 0 auto;
+            }
+            .all>.block>.card{
+                float: left;
+                width: 30%;
+                margin: 10px 10px;
+            }
+            .all>.block>.card>div{
+                background: #fff;
+                position: relative; 
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            .all>.block>.card>div>h3{
+                padding:20px;
+                font-size: 22px;
+                line-height: 1.5;
+                color:#999;
+            }
+            .all>.block>.card>div>p{
+                font-size: 14px;	
+                padding:10px;
+                color:#999;
+            }
+            .all>.block>.card>div>a{  
+                display: inline-block;
+                width: 200px;
+                padding:20px 0px;
+                font-size:16px;
+                color:#ffffff;
+                text-align:center;
+                background:#14bf8b;
+                border-radius: 8px;
+                margin: 0 auto;
+            }
+            .all>.block>.card>div>a:hover{
+                background-color:#12ac7d;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="nav">
+            <ul>
+                <li><a href="../index.html">主页</a></li>
+                <li><a href="../index.html#content">关于本站</a></li>
+                <li><a href="../download.html">下载</a></li>
+                <li><a href="./index.html">博客</a></li>
+                <li><a href="../index.html#friendsite">友情链接</a></li>
+                <li><a href="../bw/index.html">建站服务</a></li>
+                <li><a href="../index.html#message">留言板</a></li>
+            </ul>
+        </nav>
+        <div class="all">
+            <br>
+            <div class="title">
+                <h1>Spider King的博客</h1>
+                <span>记录我的技术与生活</span>
+                <p></p>
+            </div>
+            <div class="block">
+                <div class="card">
+                    <div>
+                        <h3>博客名字1</h3>
+                        <p>一段简单的介绍</p>
+                        <a href="###">马上浏览</a>
+                    </div>
+                </div> 
+                <div class="card">
+                    <div>
+                        <h3>博客名字2</h3>
+                        <p>一段简单的介绍</p>
+                        <a href="###">马上浏览</a>
+                    </div>
+                </div> 
+                <div class="card">
+                    <div>
+                        <h3>博客名字3</h3>
+                        <p>一段简单的介绍</p>
+                        <a href="###">马上浏览</a>
+                    </div>
+                </div> 
+            </div>
+            <div class="block">
+                <div class="card">
+                    <div>
+                        <h3>博客名字4</h3>
+                        <p>一段简单的介绍</p>
+                        <a href="###">马上浏览</a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>
