@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>地理作业</title>
+    <title>自适应视频播放器</title>
+    <style>
+        /* 视频容器 */
+        #video-container {
+            position: relative;
+            max-width: 100%;
+        }
+
+        /* 视频 */
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        /* 全屏按钮 */
+        #fullscreen-button {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
 
-<video src="https://vip.123pan.cn/1812667961/Cloud/Travel.mov" controls></video>
+<div id="video-container">
+    <video id="video-player" controls>
+        <source src="https://vip.123pan.cn/1812667961/Cloud/Travel.mov" type="video/quicktime">
+        Your browser does not support the video tag.
+    </video>
+    <button id="fullscreen-button">全屏</button>
+</div>
+
+<script>
+    var videoPlayer = document.getElementById("video-player");
+    var fullscreenButton = document.getElementById("fullscreen-button");
+
+    fullscreenButton.addEventListener("click", function () {
+        if (videoPlayer.requestFullscreen) {
+            videoPlayer.requestFullscreen();
+        } else if (videoPlayer.mozRequestFullScreen) { // Firefox
+            videoPlayer.mozRequestFullScreen();
+        } else if (videoPlayer.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+            videoPlayer.webkitRequestFullscreen();
+        } else if (videoPlayer.msRequestFullscreen) { // IE/Edge
+            videoPlayer.msRequestFullscreen();
+        }
+    });
+
+    // 监听全屏变化事件，以便在退出全屏时更新按钮文本
+    document.addEventListener("fullscreenchange", function () {
+        updateFullscreenButton();
+    });
+
+    document.addEventListener("mozfullscreenchange", function () {
+        updateFullscreenButton();
+    });
+
+    document.addEventListener("webkitfullscreenchange", function () {
+        updateFullscreenButton();
+    });
+
+    document.addEventListener("msfullscreenchange", function () {
+        updateFullscreenButton();
+    });
+
+    // 更新全屏按钮文本
+    function updateFullscreenButton() {
+        if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+            fullscreenButton.textContent = "退出全屏";
+        } else {
+            fullscreenButton.textContent = "全屏";
+        }
+    }
+</script>
 
 </body>
 </html>
